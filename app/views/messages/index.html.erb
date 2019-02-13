@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Salon de discussion</h1>
+
+
+    current_user >
+    <%=@u.name%>
+
+    <br>
+
+        <%@message_all.each do |m|%>
+          <%@message_id = m.user_id%>
+          <%@message_content = m.content%><br>
+          <%@all_u.each do |u|%>
+            <%@user_id = u.id%>
+            <%@user_name = u.name%>
+            <%if @user_id == @message_id%>
+              <%=@user_name = u.name%>:
+              <%=@message_content%>
+            <%end%>
+          <%end%>
+        <%end%>
+
+
+
+    <p>
+      <%=link_to "new message", new_session_message_path%><br>
+      <%= link_to "Se déconnecter", session_path(session[:user_id]), method: :delete %>
+    </p>
+  </body>
+</html>

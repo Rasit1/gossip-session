@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Create new message</h1>
+    <form accept-charset="UTF-8" action="<%=session_messages_path%>" method="post">
+      <%= token_tag %>
+      <input name="utf8" type="hidden" value="&#x2713;"/>
+      <!-- <input name="authenticity_token" type="hidden" value="J7CBxfHalt49OSHp27hblqK20c9PgwJ108nDHX/8Cts="/> -->
+      message :
+      <input type='text' name='content'/><br/>
+
+      <input type='submit'/>
+    </form>
+  </body>
+</html>
